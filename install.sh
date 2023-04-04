@@ -6,6 +6,9 @@
 # create swap and specify swap size(in MB)
 sudo dd if=/dev/zero of=${SWAP_FILE} bs=1M count=${SWAP_SIZE}
 
+# secure swap file mod as suggested
+chmod 0600 ${SWAP_FILE}
+
 # format swap
 mkswap ${SWAP_FILE}
 
