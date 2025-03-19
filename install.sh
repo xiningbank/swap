@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# duplicate if .env does not exist
+if [ ! -f .env ]; then
+  cp .env.example .env
+fi
+
 # use .env
 . .env
 
